@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ForestMap_TestMap.unity
+    guid: 70c9c3b58ba40e34fabc874c846db4b1
+  - enabled: 1
+    path: Assets/Scenes/ForestScene2.unity
+    guid: 986eb610f55359a4690cf8b09f98cab7
   m_configObjects: {}

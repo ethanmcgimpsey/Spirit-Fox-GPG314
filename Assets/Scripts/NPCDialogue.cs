@@ -6,11 +6,14 @@ using UnityEngine.InputSystem;
 using MalbersAnimations;
 using MalbersAnimations.Controller;
 using UnityEditor.Experimental.GraphView;
+using Unity.VisualScripting.Dependencies.Sqlite;
 
 public class NPCDialogue : MonoBehaviour
 {
     public MInput mInput;
     public MAnimal mAnimal;
+
+    public Animator afterDialogue;
 
     // Array to hold the NPC's dialogue lines
     public string[] dialogueLines;
@@ -26,9 +29,14 @@ public class NPCDialogue : MonoBehaviour
 
     // Reference to the player GameObject
     public GameObject player;
+    public GameObject dialogueBox;
 
     // The distance threshold for starting the dialogue
     public float dialogueDistance = 3f;
+
+    // Should player be able to interact with npc again?
+    [SerializeField] private bool interactNPC;
+    [SerializeField] private bool oneTimeInteractNPC;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +47,7 @@ public class NPCDialogue : MonoBehaviour
             Debug.LogError("Please assign a TextMeshPro component to the NPCDialogue script in the Unity Inspector.");
         }
         // Initially hide the dialogue text
-        dialogueText.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -58,24 +66,35 @@ public class NPCDialogue : MonoBehaviour
         }
     }
 
+    void PlayAnimation()
+    {
+        if(afterDialogue != null)
+        {
+            afterDialogue.Play("DreamIntro");
+        }
+    }
+
     // Function to start the NPC dialogue
     public void StartDialogue()
     {
-        if (!isDialogueActive && Vector3.Distance(transform.position, player.transform.position) <= dialogueDistance)
+        if (interactNPC)
         {
-            mInput.DisableInput("Jump");
-            mAnimal.LockMovement = true;
-            // Set dialogue to active
-            isDialogueActive = true;
+            if (!isDialogueActive && Vector3.Distance(transform.position, player.transform.position) <= dialogueDistance)
+            {
+                mInput.DisableInput("Jump");
+                mAnimal.LockMovement = true;
+                // Set dialogue to active
+                isDialogueActive = true;
 
-            // Reset current line index
-            currentLineIndex = 0;
+                // Reset current line index
+                currentLineIndex = 0;
 
-            // Display the first line of dialogue
-            DisplayNextLine();
+                // Display the first line of dialogue
+                DisplayNextLine();
 
-            // Show the dialogue text
-            dialogueText.gameObject.SetActive(true);
+                // Show the dialogue text
+                dialogueBox.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -91,12 +110,18 @@ public class NPCDialogue : MonoBehaviour
         {
             // End dialogue if there are no more lines
             EndDialogue();
+            PlayAnimation();
         }
     }
 
     // Function to end the NPC dialogue
     public void EndDialogue()
     {
+        if (oneTimeInteractNPC)
+        {
+            interactNPC = false;
+        }
+
         // Reset current line index
         currentLineIndex = 0;
 
@@ -107,7 +132,7 @@ public class NPCDialogue : MonoBehaviour
         dialogueText.text = "";
 
         // Hide the dialogue text
-        dialogueText.gameObject.SetActive(false);
+        dialogueBox.gameObject.SetActive(false);
 
         // Re-enable jumping and movement
         mInput.EnableInput("Jump");
