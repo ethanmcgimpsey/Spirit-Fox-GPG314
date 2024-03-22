@@ -2,20 +2,25 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WolfLite Blue
   m_Shader: {fileID: 4800000, guid: a5373e7a4216aa3409f9e01706d1f035, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -71,6 +76,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlbedoAlphaGradientPower: 0
     - _BumpScale: 1
@@ -101,25 +107,25 @@ Material:
     - __dirty: 0
     m_Colors:
     - _Color: {r: 0.6509804, g: 0.3874544, b: 0.035294116, a: 1}
-    - _Color1: {r: 0.18783373, g: 0.4103153, b: 0.5943396, a: 0.6039216}
-    - _Color2: {r: 0.8537736, g: 0.9493832, b: 1, a: 0.6156863}
-    - _Color3: {r: 0.11084905, g: 0.34051183, b: 0.5, a: 0.7254902}
-    - _Color4: {r: 0.062566735, g: 0.44654277, b: 0.6981132, a: 0.6039216}
+    - _Color1: {r: 0.7169812, g: 0.599923, b: 0, a: 1}
+    - _Color2: {r: 1, g: 1, b: 1, a: 0.6156863}
+    - _Color3: {r: 1, g: 1, b: 1, a: 1}
+    - _Color4: {r: 1, g: 0.9696269, b: 0, a: 0.6039216}
     - _Color5: {r: 1, g: 1, b: 1, a: 1}
     - _Color6: {r: 0.8867924, g: 0.66333747, b: 0.52287287, a: 0.68235296}
     - _Color7: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
     - _Color8: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 0.6313726}
-    - _Color9: {r: 1, g: 0.7277778, b: 0, a: 1}
+    - _Color9: {r: 1, g: 0.7294118, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GradientColor: {r: 0.24096023, g: 0.11747954, b: 0.4528302, a: 0}
-    - _MRE1: {r: 0.36862746, g: 0.5529412, b: 0, a: 0.27058825}
+    - _MRE1: {r: 0, g: 0.745283, b: 0.04426934, a: 0.27058825}
     - _MRE2: {r: 0, g: 0.38431373, b: 0, a: 0}
     - _MRE3: {r: 0.36862746, g: 0.1764706, b: 0, a: 0}
-    - _MRE4: {r: 0, g: 1, b: 0, a: 0}
+    - _MRE4: {r: 0, g: 1, b: 0, a: 0.5294118}
     - _MRE5: {r: 0, g: 1, b: 0, a: 0}
     - _MRE6: {r: 0, g: 1, b: 0, a: 0}
     - _MRE7: {r: 0, g: 1, b: 0, a: 0}
-    - _MRE8: {r: 0.41960785, g: 0.53333336, b: 0, a: 0}
+    - _MRE8: {r: 0.7867646, g: 1, b: 0, a: 0}
     - _MRE9: {r: 0, g: 1, b: 1, a: 0}
-    - _Tint: {r: 0.8306337, g: 0.90151167, b: 0.9622642, a: 1}
+    - _Tint: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   m_BuildTextureStacks: []
