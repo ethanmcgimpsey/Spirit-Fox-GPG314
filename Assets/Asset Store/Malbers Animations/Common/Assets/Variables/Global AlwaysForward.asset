@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Global AlwaysForward
   m_EditorClassIdentifier: 
   Description: Camera Input Value for the Animals
+  debug: 0
   value: 0
