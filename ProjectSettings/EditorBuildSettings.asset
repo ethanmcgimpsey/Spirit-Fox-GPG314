@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ForestMap_TestMap.unity
     guid: 70c9c3b58ba40e34fabc874c846db4b1
   - enabled: 1
-    path: Assets/Scenes/ForestMap_Level2.unity
-    guid: 49a3ea15f4bb06845917ec4338304ba1
+    path: Assets/Scenes/ForestMapGame.unity
+    guid: 986eb610f55359a4690cf8b09f98cab7
   m_configObjects: {}

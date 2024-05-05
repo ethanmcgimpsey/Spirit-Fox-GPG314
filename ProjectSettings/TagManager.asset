@@ -10,6 +10,8 @@ TagManager:
   - Fly
   - Animal
   - Water
+  - Trigger
+  - Death
   layers:
   - Default
   - TransparentFX
